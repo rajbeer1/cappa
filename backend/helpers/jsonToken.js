@@ -8,7 +8,7 @@ const createJwtToken = (user) => {
       email: user.email,
     },
     'Rajbeer',
-    { expiresIn: '1month' }
+    { expiresIn: '2629743040' }
   );
 };
 

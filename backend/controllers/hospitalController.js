@@ -16,8 +16,8 @@ exports.signup = async (req, res) => {
     });
     await newHospital.save();
       const token = jwt.sign({ id: newHospital._id }, process.env.JWT_SECRET, {
-        expiresIn: '1month',
-    });
+        expiresIn: '2629743040',
+      });
     res
       .status(201)
       .json({ message: 'Hospital created successfully', token });
@@ -41,7 +41,7 @@ exports.login = async (req, res) => {
 
     // Create a JWT token
     const token = jwt.sign({ id: hospital._id }, process.env.JWT_SECRET, {
-      expiresIn: '1month',
+      expiresIn: '2629743040',
     });
     res.status(200).json({ token });
   } catch (error) {
